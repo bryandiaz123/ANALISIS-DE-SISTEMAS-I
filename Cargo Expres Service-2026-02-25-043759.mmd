@@ -1,0 +1,33 @@
+---
+config:
+  layout: fixed
+  theme: mc
+---
+flowchart LR
+ subgraph Externos["Actores Externos"]
+        Admin["Administrador"]
+        Empresa["Empresa"]
+        Cliente["Cliente"]
+        Repartidor["Repartidor"]
+  end
+ subgraph Modulos["Módulos Internos"]
+        Auth["Autenticación"]
+        Paquetes["Gestión de Paquetes"]
+        Rutas["Optimización de Rutas"]
+        Mapa["Visualización en Mapa"]
+  end
+ subgraph Sistema["Cargo Expres"]
+        Modulos
+        DB[("Base de Datos")]
+        Mapas["Servicio de Mapas"]
+  end
+    Admin -- Gestiona usuarios y datos --> Auth
+    Empresa -- Registra paquetes --> Paquetes
+    Cliente -- Consulta estado de envío --> Paquetes
+    Repartidor -- Recibe ruta de entrega --> Rutas
+    Paquetes -- Guarda información --> DB
+    Rutas -- Lee destinos y calcula --> Paquetes
+    Rutas -- Usa coordenadas --> Mapas
+    Mapa -- Muestra ruta óptima --> Repartidor
+    Auth --> DB
+    Paquetes --> Auth
