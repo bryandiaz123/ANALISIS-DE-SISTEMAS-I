@@ -1,7 +1,7 @@
 # Requirements – Cargo Expres
 
 ## Backlog
-(PEGAR LINK DEL TABLERO AQUÍ)
+https://trello.com/invite/b/69a30a45ac6397c6c764e626/ATTIbcfac86e51edba08a333f8a36110c8d9F59E4A44/umg
 
 ## Historias de Usuario
 
